@@ -5038,7 +5038,7 @@ export default function POSBilling() {
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto">
-                <div className="flex bg-gray-100 p-1 rounded-lg">
+                <div className="flex bg-gray-100 p-1 rounded-lg shrink-0">
                   <button
                     onClick={() => setScheduleFilter("ALL")}
                     className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-md transition-colors ${scheduleFilter === "ALL" ? "bg-white shadow-sm text-black" : "text-gray-500 hover:text-black"}`}
@@ -5058,7 +5058,7 @@ export default function POSBilling() {
                     Sch-H1
                   </button>
                 </div>
-                <div className="relative flex-1 lg:flex-none">
+                <div className="relative flex-1 min-w-[200px] sm:min-w-[220px] lg:flex-none lg:w-48 lg:min-w-0">
                   <Search className="w-3.5 h-3.5 text-[#000000]/40 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
@@ -5070,7 +5070,7 @@ export default function POSBilling() {
                 </div>
                 <button
                   onClick={exportInventoryCSV}
-                  className="text-[10px] font-bold text-[#000000] bg-white border border-black/10 hover:bg-[#FAFAFA] px-3 py-2 rounded-lg uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="text-[10px] font-bold text-[#000000] bg-white border border-black/10 hover:bg-[#FAFAFA] px-3 py-2 rounded-lg uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
                 >
                   <Download className="w-3.5 h-3.5 text-[#DC2626]" /> Export CSV
                 </button>
@@ -5081,7 +5081,7 @@ export default function POSBilling() {
                     setCatalogTargetRowId(null);
                     setShowCatalogModal(true);
                   }}
-                  className="text-[10px] font-bold text-white bg-[#1E40AF] hover:bg-[#DC2626] px-3 py-2 rounded-lg uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
+                  className="text-[10px] font-bold text-white bg-[#1E40AF] hover:bg-[#DC2626] px-3 py-2 rounded-lg uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
                 >
                   <Plus className="w-3.5 h-3.5" /> Add Product
                 </button>
@@ -5129,7 +5129,7 @@ export default function POSBilling() {
                         <th className="p-3 text-[10px] font-black text-[#000000] uppercase tracking-wider text-center">
                           Stock
                         </th>
-                        <th className="p-3 text-[10px] font-black text-[#000000] uppercase tracking-wider text-center">
+                        <th className="p-3 text-[10px] font-black text-[#000000] uppercase tracking-wider text-center whitespace-nowrap min-w-[110px]">
                           Expiry
                         </th>
                         <th className="p-3 text-[10px] font-black text-[#000000] uppercase tracking-wider">
@@ -5217,11 +5217,11 @@ export default function POSBilling() {
                                 </div>
                               </td>
                               <td
-                                className={`p-3 text-center text-xs font-bold ${isExpired ? "text-[#E11D48]" : isExpiringSoon ? "text-[#D97706]" : "text-[#000000]/70"}`}
+                                className={`p-3 text-center text-xs font-bold whitespace-nowrap min-w-[110px] ${isExpired ? "text-[#E11D48]" : isExpiringSoon ? "text-[#D97706]" : "text-[#000000]/70"}`}
                               >
-                                {p.expiryDate || "—"}
+                                <span className="whitespace-nowrap">{p.expiryDate || "—"}</span>
                                 {days !== null && (
-                                  <div className="text-[9px] font-semibold">
+                                  <div className="text-[9px] font-semibold whitespace-nowrap">
                                     {days < 0
                                       ? `Expired ${Math.abs(days)}d ago`
                                       : `${days}d left`}

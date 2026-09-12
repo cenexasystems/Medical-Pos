@@ -1,9 +1,12 @@
-const CACHE_NAME = 'vinayaka-medicals-pos-v1';
+const CACHE_NAME = 'vinayaka-medicals-pos-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json',
   '/logo.png',
   '/icon.png',
+  '/apple-touch-icon.png',
+  '/icon-192.png',
+  '/icon-512.png',
   '/pos/admin/secure/control-panel/vinayaka-medicals'
 ];
 
